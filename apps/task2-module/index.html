@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<script src="../../assets/js/shield.js"></script>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="Muhammed Zaghloul">
+<title>رحلة إبراهيم: الهرم العطري</title>
+<link rel="preload" href="assets/fonts/Almarai-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Almarai-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/module.css">
+</head>
+<body>
+<div id="viewport">
+  <div id="frame" class="frame">
+
+    <div id="signin" class="signin" hidden>
+      <div class="si-art" aria-hidden="false">
+        <span class="rings" aria-hidden="true"></span>
+        <span class="big" id="si-art-ic" aria-hidden="true"></span>
+        <h1 id="si-title"></h1>
+        <p id="si-sub"></p>
+        <span class="est" id="si-est"></span>
+      </div>
+      <div class="si-form" role="form" aria-labelledby="si-title"></div>
+    </div>
+
+    <div id="app" hidden style="display:contents">
+      <header class="pbar">
+        <div class="pbar-label"><span id="pbar-label"></span></div>
+        <div class="pbar-ctrls" role="toolbar" aria-label="عناصر التحكم">
+          <button type="button" class="rbtn" id="btn-play"></button>
+          <button type="button" class="rbtn" id="btn-replay"></button>
+          <button type="button" class="rbtn" id="btn-mute" aria-pressed="false"></button>
+          <span id="pbar-extra" style="display:contents"></span>
+        </div>
+        <div class="wordmark"><span id="wm-ic"></span><span>رحلة إبراهيم</span></div>
+      </header>
+
+      <main class="stage" id="stage">
+        <div class="band">
+          <div class="title-pill"><span class="badge" id="badge" aria-hidden="true"></span><h2 id="title" tabindex="-1"></h2></div>
+          <div class="band-bottles" id="band-bottles" aria-hidden="true"></div>
+          <div class="vo-strip" id="vo-strip" role="status" aria-live="polite"></div>
+        </div>
+        <div class="host" id="host"></div>
+        <footer class="bbar" id="bbar">
+          <button type="button" class="navbtn prev" id="prev"></button>
+          <div class="prog">
+            <div class="prog-label" id="prog-label"></div>
+            <div class="prog-track" id="prog-track" role="progressbar" aria-label="التقدم في الوحدة" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="prog-fill" id="prog-fill"></div></div>
+          </div>
+          <button type="button" class="navbtn next" id="next" aria-disabled="true"></button>
+        </footer>
+      </main>
+    </div>
+
+  </div>
+</div>
+<div id="sr-live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<script src="config.js"></script>
+<script src="content.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/tracker.js"></script>
+<script src="assets/js/dnd.js"></script>
+<script src="assets/js/engine.js"></script>
+<script>document.getElementById('wm-ic').innerHTML = window.icon('bottle');</script>
+</body>
+</html>

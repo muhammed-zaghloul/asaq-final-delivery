@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="asaq-ibrahim-l11-l12" version="1.0"
+  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="ORG-ASAQ">
+    <organization identifier="ORG-ASAQ">
+      <title>رحلة إبراهيم: الهرم العطري</title>
+      <item identifier="ITEM-1" identifierref="RES-1" isvisible="true">
+        <title>رحلة إبراهيم: الهرم العطري</title>
+        <adlcp:masteryscore>80</adlcp:masteryscore>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="README.md"/>
+      <file href="assets/css/module.css"/>
+      <file href="assets/fonts/Almarai-Bold.woff2"/>
+      <file href="assets/fonts/Almarai-ExtraBold.woff2"/>
+      <file href="assets/fonts/Almarai-Regular.woff2"/>
+      <file href="assets/js/dnd.js"/>
+      <file href="assets/js/engine.js"/>
+      <file href="assets/js/icons.js"/>
+      <file href="assets/js/tracker.js"/>
+      <file href="config.js"/>
+      <file href="content.js"/>
+      <file href="index.html"/>
+      <file href="media/explainer-poster.jpg"/>
+      <file href="media/explainer.ar.vtt"/>
+      <file href="media/explainer.mp4"/>
+      <file href="media/intro-poster.jpg"/>
+      <file href="media/intro.ar.vtt"/>
+      <file href="media/intro.mp4"/>
+      <file href="media/sfx/click.mp3"/>
+      <file href="media/sfx/correct.mp3"/>
+      <file href="media/sfx/door.mp3"/>
+      <file href="media/sfx/flip.mp3"/>
+      <file href="media/sfx/notify.mp3"/>
+      <file href="media/sfx/success.mp3"/>
+      <file href="media/sfx/wrong.mp3"/>
+    </resource>
+  </resources>
+</manifest>

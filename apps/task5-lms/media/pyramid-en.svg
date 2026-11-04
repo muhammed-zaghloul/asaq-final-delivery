@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" direction="ltr" font-family="Almarai, Segoe UI, Arial, sans-serif">
+<rect width="960" height="600" fill="#F7F5EF"/>
+<text x="480" y="70" text-anchor="middle" font-size="40" font-weight="800" fill="#421A00">The Fragrance Pyramid</text>
+<polygon points="480,110 590,250 370,250" fill="#C19941"/>
+<polygon points="370,262 590,262 680,400 280,400" fill="#7A5A12"/>
+<polygon points="280,412 680,412 780,560 180,560" fill="#2B2E4A"/>
+<text x="480" y="225" text-anchor="middle" font-size="24" font-weight="700" fill="#2B2E4A">Top notes</text>
+<text x="480" y="340" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">Heart notes</text>
+<text x="480" y="495" text-anchor="middle" font-size="28" font-weight="700" fill="#E7BF67">Base notes</text>
+<g font-size="20" fill="#2B2E4A"><text x="760" y="190" text-anchor="middle">5–15 min</text><text x="800" y="335" text-anchor="middle">15 min – 4 h</text><text x="860" y="490" text-anchor="middle">Hours, up to next day</text></g>
+</svg>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<script src="../../assets/js/shield.js"></script>
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Muhammed Zaghloul">
+<title>Market Share · Sample printable kit</title>
+<style>
+@font-face{font-family:Almarai;font-weight:400;src:url(assets/fonts/almarai-arabic-400-normal.woff2)}
+@font-face{font-family:Almarai;font-weight:800;src:url(assets/fonts/almarai-arabic-800-normal.woff2)}
+@page{size:A4;margin:10mm}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif;color:#2B2E4A;font-size:9.5pt}
+.ar{font-family:Almarai,Tahoma,sans-serif;direction:rtl;text-align:right}
+.page{break-after:page;padding:2mm}
+h1{font-size:18pt;margin:0 0 2mm;color:#421A00}h2{font-size:13pt;margin:0 0 3mm;color:#421A00}
+.sub{color:#5E6178;margin:0 0 5mm}
+.map{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.d{border:1.2mm solid #2B2E4A;border-radius:5mm;height:58mm;padding:4mm;display:flex;flex-direction:column;background:#F7F5EF}
+.d b{font-size:16pt}.d .ar{font-size:15pt;font-weight:800}.d .st{color:#C19941;font-size:16pt;letter-spacing:2px}.d .ff{color:#5E6178}
+.d .slot{margin-top:auto;border:0.5mm dashed #9B731B;border-radius:3mm;height:22mm;display:grid;place-items:center;color:#9B731B;font-size:8pt;text-align:center}
+.track{display:flex;margin-top:5mm;border:0.5mm solid #2B2E4A;border-radius:3mm;overflow:hidden}.track span{flex:1;padding:2mm;text-align:center;border-inline-end:0.3mm solid #ccc;font-size:8pt}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.card{border:0.6mm solid #2B2E4A;border-radius:4mm;height:56mm;padding:4mm;display:flex;flex-direction:column;gap:2mm;break-inside:avoid;position:relative;background:#fff}
+.card .k{font-size:7.5pt;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#9B731B;display:flex;justify-content:space-between}
+.card .en{font-size:12pt;font-weight:700}.card .ar{font-size:12pt;font-weight:800}
+.card.ev{background:#2B2E4A;color:#fff}.card.ev .k{color:#E7BF67}.card.ev .small{color:#D8D9E6}
+.card.pw{background:#FBF5E6}.card.obj{background:#FBE9E7}
+.small{font-size:8.5pt;color:#5E6178}.price{margin-top:auto;font-size:14pt;font-weight:800;color:#421A00}
+table{width:100%;border-collapse:collapse;font-size:8.5pt}th,td{border:0.3mm solid #C9C5BB;padding:1.2mm 2mm;text-align:left;vertical-align:top}th{background:#F2EFE6}
+.ok{color:#1F6B40;font-weight:700}.key td{height:auto}
+.page{position:relative}.wm{position:absolute;top:95mm;left:0;right:0;text-align:center;font-size:64pt;font-weight:800;color:rgba(193,153,65,.13);transform:rotate(-25deg);pointer-events:none;z-index:0;font-family:Almarai,system-ui}
+.foot{font-size:7pt;color:#5E6178;margin-top:3mm}
+</style>
+</head>
+<body>
+<div id="out"></div>
+<script src="assets/game-data.js"></script>
+<script>
+const E = o => o.en, A = o => o.ar, star = n => '★'.repeat(n) + '☆'.repeat(3 - n);
+const fmt = n => 'SAR ' + n.toLocaleString('en-US');
+const WM = '<div class="wm">SAMPLE · عينة</div>';
+const c = GD.customers.find(x => x.id === 'k2'), ob = GD.objections[c.obj], ev = GD.events[0], pw = GD.powerups[0];
+let h = '';
+h += `<section class="page">${WM}<h1>Market Share · Region Challenge <span class="ar" style="float:right">حصة السوق · تحدي المنطقة</span></h1>
+<p class="sub">Sample printable kit: one example of each element. The full kit (9-district board, 12 customer cards, 4 objections, 6 events, 3 power-ups, full answer key) is available on request. · نموذج من كل عنصر؛ الأدوات الكاملة متاحة عند الطلب.</p>
+<h2>1 · Board district tile · مربع حي على اللوحة</h2>
+<div class="map">${GD.districts.filter(d => d.y === 0).map(d => `<div class="d"><b>${E(d.name)}</b><span class="ar">${A(d.name)}</span><span class="st">${star(d.stars)}</span><span class="ff">${GD.footfall[d.stars]} customers / day · ${GD.footfall[d.stars]} عميل يومياً</span><div class="slot">Owner token + best sale<br>رمز المالك + أعلى بيع</div></div>`).join('')}</div>
+<p class="foot">Row 1 of 3 shown. The full board has 9 districts and a regional-target track.</p>
+<h2 style="margin-top:5mm">2 · Card samples · نماذج البطاقات</h2>
+<div class="cards">
+<div class="card"><div class="k"><span>Customer card</span><span>${star(c.stars)}</span></div><div class="en">${E(c.need)}</div><div class="ar">${A(c.need)}</div><div class="small" style="margin-top:auto">Play in a ${star(c.stars)} district. Discover → recommend → upsell → one add-on → objection.</div></div>
+<div class="card obj"><div class="k"><span>Objection card</span><span>Step 5</span></div><div class="en">${E(ob.q)}</div><div class="ar">${A(ob.q)}</div><div class="small" style="margin-top:auto">Answer out loud. The facilitator scores with the answer key.</div></div>
+<div class="card ev"><div class="k"><span>Market event card</span><span>⚡</span></div><div class="en">${E(ev.name)}</div><div class="ar">${A(ev.name)}</div><div class="small">${E(ev.text)}</div><div class="small ar">${A(ev.text)}</div></div>
+<div class="card pw"><div class="k"><span>Power-up card</span><span>${fmt(pw.cost)}</span></div><div class="en">${E(pw.name)}</div><div class="ar">${A(pw.name)}</div><div class="small">${E(pw.text)}</div><div class="small ar">${A(pw.text)}</div></div>
+</div></section>`;
+h += `<section class="page">${WM}<h2>3 · Price list (extract) · قائمة الأسعار (مقتطف)</h2><table><thead><tr><th>Product / add-on</th><th class="ar">المنتج / الإضافة</th><th>Price</th></tr></thead><tbody>
+${['p1', 'p3', 'p4'].map(k => GD.products[k]).map(p => `<tr><td>${E(p.name)}<br><span class="small">${E(p.fam)}</span></td><td class="ar">${A(p.name)}</td><td>${fmt(p.price)}</td></tr>`).join('')}
+${['a1', 'a4'].map(k => GD.addons[k]).map(p => `<tr><td>Add-on: ${E(p.name)}</td><td class="ar">إضافة: ${A(p.name)}</td><td>${fmt(p.price)}</td></tr>`).join('')}</tbody></table><p class="foot">5 of 12 items shown. Prices are illustrative for the game. الأسعار توضيحية لأغراض اللعبة.</p>
+<h2 style="margin-top:4mm">4 · Team score sheet · ورقة نتائج الفريق</h2><table><thead><tr><th>Round</th><th>District</th><th>1 Disc.</th><th>2 Product</th><th>3 Upsell</th><th>4 Add-on</th><th>5 Objection</th><th>Basket</th><th>× Footfall</th><th>= Sale</th><th>Budget +10%</th><th>Power-up</th></tr></thead><tbody>
+<tr><td>1</td><td>Tahlia ★★★</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✗</td><td>1,750</td><td>18</td><td>31,500</td><td>3,150</td><td>—</td></tr>
+${[2, 3].map(r => `<tr><td>${r}</td>${'<td style="height:10mm"></td>'.repeat(11)}</tr>`).join('')}</tbody></table><p class="foot">Row 1 is a worked example. The full sheet has 8 rounds and totals.</p>
+<h2 style="margin-top:4mm">5 · Answer key (sample card) · مفتاح الإجابة (البطاقة النموذجية)</h2><table><thead><tr><th>Step</th><th>Best decision</th><th>Why</th></tr></thead><tbody>
+<tr><td>1 · Discover</td><td class="ok">${E(c.disc.find(o => o.ok).t)}</td><td>${E(c.disc.find(o => o.ok).why)}</td></tr>
+<tr><td>2 · Product</td><td class="ok">${E(GD.products[c.rec.ok].name)}</td><td>${E(c.rec.why)}</td></tr>
+<tr><td>3 · Upsell</td><td class="ok">${E(c.ups.opts.find(o => o.ok).t)} (+${fmt(c.ups.plus)})</td><td>${E(c.ups.opts.find(o => o.ok).why)}</td></tr>
+<tr><td>4 · Add-on</td><td class="ok">${E(GD.addons[c.add.ok].name)}</td><td>${E(c.add.why)}</td></tr>
+<tr><td>5 · Objection ${E(ob.q)}</td><td class="ok">${E(ob.opts.find(o => o.ok).t)}</td><td>${E(ob.opts.find(o => o.ok).why)}</td></tr></tbody></table>
+<h2 style="margin-top:4mm">6 · Observation rubric (extract) · سلّم الملاحظة (مقتطف)</h2><table><thead><tr><th>Step</th><th>0 · Weak</th><th>1 · Partial</th><th>2 · Strong</th></tr></thead><tbody>
+<tr><td>Discovery</td><td>Budget or best seller first; no question</td><td>Closed question</td><td>Open question about current fragrance, occasion or preference</td></tr>
+<tr><td>Cross-selling</td><td>None, or several pushed items</td><td>One add-on, weak link</td><td>One add-on linked to the customer’s words</td></tr></tbody></table>
+<p class="foot">Sample kit · Prepared by Muhammed Zaghloul · Market Share: Region Challenge</p></section>`;
+document.getElementById('out').innerHTML = h;
+</script>
+</body>
+</html>

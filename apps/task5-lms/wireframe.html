@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<script src="../../assets/js/shield.js"></script>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Muhammed Zaghloul">
+<title>Wireframe · Sales Academy LMS</title>
+<style>
+:root{--ink:#2B2E4A;--muted:#5E6178;--line:#D6D3CC;--box:#E6E3DC;--gold:#C19941}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif;background:#F2F1EE;color:var(--ink);line-height:1.55}
+.wrap{max-width:1200px;margin:auto;padding:28px 20px 60px}h1{margin:6px 0 4px;color:#421A00}h2{font-size:1.15rem;margin:0 0 12px;color:#421A00;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{display:inline-block;background:#2B2E4A;color:#E7BF67;border-radius:999px;padding:4px 12px;font-weight:700;font-size:.8rem}
+.muted{color:var(--muted)}a{color:var(--ink)}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;min-height:40px;align-items:center;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);text-decoration:none;font-weight:700;background:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold)}
+.board{background:#fff;border:1px solid #DDD9CF;border-radius:16px;padding:20px;margin-top:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.g2{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start}
+.role{border:1.5px solid var(--line);border-radius:14px;padding:14px}.role h3{margin:0 0 8px;font-size:1rem}.role ul{margin:0;padding-inline-start:18px}.role li{margin:3px 0}
+.role.rm{border-color:#9AA0D8}.role.ra{border-color:var(--gold)}.inh{font-size:.82rem;color:var(--muted);margin-bottom:6px}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.type{border:1.5px dashed var(--line);border-radius:12px;padding:10px}.type b{display:block}.type small{color:var(--muted)}
+.scr{border:2px solid #B9B5AB;border-radius:12px;background:#FAFAF8;overflow:hidden;font-size:.78rem;color:#55524B}
+.bar{height:34px;background:var(--box);border-bottom:1.5px solid #CFCBC1;display:flex;align-items:center;gap:8px;padding:0 10px}
+.x{background:var(--box);border:1.5px dashed #B9B5AB;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;min-height:30px;position:relative}
+.x.s{border-style:solid;background:#EFEDE8}.x.d{background:#BDB9AF;border:0;color:#3F3C36}.x.b{border-radius:999px;background:#C9C5BB;border-style:solid;padding:4px 12px}.x.l{min-height:10px;padding:0;border:0;background:#E1DED7;border-radius:6px}
+.r{display:flex;gap:8px}.c{display:flex;flex-direction:column;gap:8px}.p{padding:10px}.f{flex:1}
+.n{position:absolute;top:-9px;right:-9px;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#2B2E4A;font-weight:800;font-size:.72rem;display:grid;place-items:center;border:2px solid #fff;z-index:2}
+ol.notes{margin:0;padding-inline-start:20px;font-size:.92rem}ol.notes li{margin-bottom:6px}ol.notes li::marker{font-weight:800;color:#7A5A12}
+.m{width:220px;border-radius:24px;border-width:3px}
+.ref{font-size:.75rem;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--muted)}
+@media (max-width:900px){.g3,.g2,.types{grid-template-columns:1fr}}
+@media print{body{background:#fff}.board{break-inside:avoid}.noprint{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><div><span class="pill">Task 5 · Training website</span><h1>Wireframe: Sales Academy LMS</h1><p class="muted" style="margin:0">Low-fidelity structure of the platform, inspired by Moodle Cloud. Gold numbers point to the notes beside each screen.</p></div>
+  <div class="noprint" style="display:flex;gap:8px"><a class="btn gold" href="index.html">Open prototype</a><a class="btn" href="index.html?lang=ar">النسخة العربية</a></div></div>
+
+<section class="board"><h2>1 · Sitemap by role</h2>
+  <div class="g3">
+    <div class="role"><h3>Learner</h3><ul><li><b>Dashboard</b> (default page)</li><li>Home: course catalogue</li><li>Course page → activity player</li><li>Learning history &amp; certificates</li><li>Profile &amp; settings</li><li>Notifications</li></ul></div>
+    <div class="role rm"><h3>Manager</h3><p class="inh">Everything a learner has, plus:</p><ul><li><b>My team</b>: progress, overdue, hours</li><li>Team member detail</li><li>Assign course with due date</li><li>Send reminder</li><li>Export team progress</li></ul></div>
+    <div class="role ra"><h3>Administrator</h3><p class="inh">Everything a learner has, plus Site administration:</p><ul><li><b>Courses</b>: create, edit content, publish, launch, duplicate, delete</li><li><b>Users</b>: add, edit, delete, suspend, roles, managers, CSV upload, bulk actions, log in as</li><li><b>Reports</b>: overview, course completion, activity completion, satisfaction, logs, xAPI</li></ul></div>
+  </div>
+  <p class="muted" style="margin:12px 0 0">Global on every page: language switch (English default / Arabic RTL), light / dark mode, notifications, user menu.</p>
+</section>
+
+<section class="board"><h2>2 · Supported content types</h2>
+  <div class="types">
+    <div class="type"><b>Video</b><small>MP4 with captions · complete at 90% watched</small></div><div class="type"><b>SCORM</b><small>1.2 / 2004 package · complete on SCORM status</small></div>
+    <div class="type"><b>HTML page</b><small>Rich text · complete on view</small></div><div class="type"><b>Audio (voice)</b><small>MP3 + transcript · complete at 90%</small></div>
+    <div class="type"><b>Image</b><small>Infographic / job aid + alt text · complete on view</small></div><div class="type"><b>xAPI (advanced)</b><small>Statements to an LRS · complete on “completed”</small></div>
+    <div class="type"><b>Quiz</b><small>Pass grade, 3 attempts, highest grade</small></div><div class="type"><b>Survey</b><small>Satisfaction (3 ratings + comment) · complete on submit</small></div>
+  </div></section>
+
+<section class="board"><h2>3 · Learner dashboard <span class="ref">Moodle: Dashboard · Timeline · Course overview</span></h2>
+  <div class="g2"><div class="scr"><div class="bar"><span class="x l" style="width:90px"></span><span class="x l" style="width:60px"></span><span class="x l" style="width:60px"></span><span class="f"></span><span class="x" style="width:24px;height:24px;padding:0">EN</span><span class="x" style="width:24px;height:24px;padding:0">☾</span><span class="x" style="width:24px;height:24px;padding:0">🔔</span></div>
+    <div class="p c"><div class="x" style="background:#F6E3E1">Overdue alert: 1 course<span class="n">1</span></div>
+      <div class="r"><div class="c f"><div class="x d" style="min-height:70px;justify-content:space-between;padding:8px 14px"><span>Continue where you left off: course · last activity · %</span><span class="x b">Resume<span class="n">2</span></span></div>
+        <div class="r"><div class="x s f" style="height:46px">Hours total<span class="n">3</span></div><div class="x s f">Hours 30 days</div><div class="x s f">Courses done</div><div class="x s f">Badges</div></div>
+        <div class="x s c" style="align-items:stretch;padding:8px"><b>My assigned courses<span class="n">4</span></b><div class="r"><div class="x f" style="justify-content:flex-start">Course · Overdue · due date · % · MAIN</div><div class="x b">Continue</div></div><div class="r"><div class="x f" style="justify-content:flex-start">Course · Due in 5 days · %</div><div class="x b">Continue</div></div></div>
+        <div class="x s" style="height:70px">Learning hours, last 8 weeks (bar chart)</div></div>
+      <div class="c" style="width:170px"><div class="x s" style="height:110px">Timeline: deadlines (overdue first)<span class="n">5</span></div><div class="x s" style="height:80px">My badges<span class="n">6</span></div><div class="x s" style="height:50px">Explore catalogue</div></div></div></div></div>
+    <ol class="notes"><li>Overdue courses are flagged first.</li><li>One click back to the exact activity.</li><li>Learning-hours statistics.</li><li>Assigned courses sorted overdue → due soon → in progress; the main course is tagged.</li><li>Deadlines from due dates.</li><li>Badges earned on course completion.</li></ol></div></section>
+
+<section class="board"><h2>4 · Home: course catalogue <span class="ref">Moodle: Course categories · Self enrolment</span></h2>
+  <div class="g2"><div class="scr"><div class="bar"></div><div class="p c">
+    <div class="r" style="gap:4px"><span class="x b">All courses 6<span class="n">1</span></span><span class="x">Assigned to me</span><span class="x">My courses</span><span class="x">Completed</span></div>
+    <div class="r"><div class="x f" style="justify-content:flex-start">🔍 Search<span class="n">2</span></div><div class="x" style="width:110px">Category ▾</div><div class="x" style="width:110px">Content type ▾</div></div>
+    
+    <div class="r"><div class="x s c f" style="min-height:120px">Card: image · category · title · type icons · hours · status · %<div class="x b">Continue</div></div><div class="x s c f">Card · Open enrolment<div class="x b">Enrol me<span class="n">3</span></div></div><div class="x s c f">Card · Completed<div class="x b">Certificate</div></div></div></div></div>
+    <ol class="notes"><li>Tabs: all courses on the platform vs. the ones assigned to me.</li><li>Search and filter by category or content type.</li><li>Self enrolment for open courses; assigned-only courses show “by assignment”.</li></ol></div></section>
+
+<section class="board"><h2>5 · Course player <span class="ref">Moodle: Activity completion · SCORM · Page · File · H5P/xAPI · Quiz · Feedback</span></h2>
+  <div class="g2"><div class="scr"><div class="bar"></div><div class="p r">
+    <div class="x s c" style="width:150px;min-height:240px;justify-content:flex-start;padding:8px">Course index · % <span class="n">1</span><div class="x l" style="width:100%"></div><div class="x l" style="width:100%"></div><div class="x l" style="width:100%"></div><div class="x l" style="width:100%"></div></div>
+    <div class="c f"><div class="r"><div class="x f" style="justify-content:flex-start">Activity title · type · minutes · completion rule</div><div class="x b">To do / Done<span class="n">2</span></div></div>
+      <div class="x d" style="height:120px">Player: video / audio / image / HTML / SCORM iframe / xAPI scenario / quiz / survey<span class="n">3</span></div>
+      <div class="x s">Runtime panel: SCORM cmi data or xAPI statements<span class="n">4</span></div>
+      <div class="r" style="justify-content:space-between"><div class="x b">← Previous</div><div class="x">5 / 8</div><div class="x b">Next →</div></div></div></div></div>
+    <ol class="notes"><li>Sections with completion ticks.</li><li>Completion updates automatically when the rule is met.</li><li>One player area for every content type.</li><li>Technical transparency for SCORM and xAPI tracking.</li></ol></div></section>
+
+<section class="board"><h2>6 · Learning history · Profile &amp; settings <span class="ref">Moodle: User profiles · Notifications · Data requests</span></h2>
+  <div class="g2"><div class="r" style="flex-wrap:wrap">
+    <div class="scr f" style="min-width:260px"><div class="bar"></div><div class="p c"><div class="r"><div class="x s f">Hours</div><div class="x s f">Activities</div><div class="x s f">Courses</div><div class="x s f">Badges</div></div><div class="x s" style="height:50px">Certificates (view / print)<span class="n">1</span></div><div class="x s" style="height:80px">Learning record table · Export CSV<span class="n">2</span></div></div></div>
+    <div class="scr f" style="min-width:260px"><div class="bar"></div><div class="p r"><div class="x s" style="width:80px;height:140px">Avatar · name · branch</div><div class="c f"><div class="r" style="gap:4px;flex-wrap:wrap"><span class="x b">Personal</span><span class="x">Preferences</span><span class="x">Notifications</span><span class="x">Privacy</span><span class="x">Security<span class="n">3</span></span></div><div class="x" style="height:30px">Name EN / AR · email · phone</div><div class="x" style="height:30px">Language · theme</div><div class="x b" style="align-self:flex-start">Save</div></div></div></div></div>
+    <ol class="notes"><li>Certificates for completed courses.</li><li>Every completed activity with date, time spent and score.</li><li>Personal info, language/theme preferences, notification choices, download my data, password.</li></ol></div></section>
+
+<section class="board"><h2>7 · Manager: My team <span class="ref">Moodle: Mentees block (parent role) · Activity completion report</span></h2>
+  <div class="g2"><div class="scr"><div class="bar"></div><div class="p c"><div class="r"><div class="x s f" style="height:46px">Members</div><div class="x s f">Avg progress</div><div class="x s f">Overdue</div><div class="x s f">Hours 30 days<span class="n">1</span></div></div>
+    <div class="r" style="justify-content:flex-end"><div class="x b">+ Assign course<span class="n">2</span></div><div class="x b">Export CSV</div></div>
+    <div class="x s c" style="align-items:stretch;padding:8px"><div class="r"><div class="x f" style="justify-content:flex-start">Name · branch · progress bar · done · overdue · hours · last access</div><div class="x b">✉ Remind<span class="n">3</span></div></div><div class="r"><div class="x f" style="justify-content:flex-start">Name · …</div><div class="x b">✉</div></div></div></div></div>
+    <ol class="notes"><li>Team KPIs.</li><li>Assign a course to one or many members with a due date and notification.</li><li>Reminder goes to the learner’s notifications; click a name for courses and history.</li></ol></div></section>
+
+<section class="board"><h2>8 · Admin: Courses <span class="ref">Moodle: Adding a new course · Course visibility · Manual enrolment</span></h2>
+  <div class="g2"><div class="scr"><div class="bar"></div><div class="p c"><div class="r" style="gap:4px"><span class="x b">Courses</span><span class="x">Users</span><span class="x">Reports</span><span class="f"></span><span class="x b">+ New course<span class="n">1</span></span></div>
+    <div class="x s" style="height:60px">Table: course · category · content icons · status (draft / published / hidden) · enrolled · completion · ✎ 👁 🚀 ⧉ 🗑</div>
+    <div class="x s c" style="align-items:stretch;padding:8px"><b>Course editor<span class="n">2</span></b><div class="r"><div class="x f">Title EN / AR · summary · category · hours · visibility · self enrolment</div></div><div class="r"><div class="x f" style="justify-content:flex-start">Section · activities ↑↓ 👁 🗑</div><div class="x b">+ Add activity<span class="n">3</span></div></div></div>
+    <div class="x d">Launch: audience (all / branch / managers) · due date · notify<span class="n">4</span></div></div></div>
+    <ol class="notes"><li>Create a course as a draft.</li><li>Bilingual settings and a section-based content builder.</li><li>Pick one of 8 content types, upload a file or link.</li><li>Launch = publish + enrol audience + due date + notification.</li></ol></div></section>
+
+<section class="board"><h2>9 · Admin: Users <span class="ref">Moodle: Browse list of users · Add a new user · Upload users · Roles · Log in as</span></h2>
+  <div class="g2"><div class="scr"><div class="bar"></div><div class="p c"><div class="r"><div class="x f" style="justify-content:flex-start">🔍 Search</div><div class="x" style="width:90px">Role ▾</div><div class="x" style="width:90px">Status ▾</div><div class="x b">+ Add user</div><div class="x b">Upload CSV<span class="n">1</span></div></div>
+    <div class="x" style="background:#E9EAF2">Bulk: suspend · activate · assign course · delete<span class="n">2</span></div>
+    <div class="x s" style="height:80px">☐ name · username · role · branch · manager · status · last access · ✎ ⊘ 🔑 ⇥ 🗑<span class="n">3</span></div></div></div>
+    <ol class="notes"><li>Add one user or import many from CSV (template + preview).</li><li>Bulk actions on selected users.</li><li>Edit, suspend/activate, reset password, log in as, delete (with confirmation).</li></ol></div></section>
+
+<section class="board"><h2>10 · Admin: Reports <span class="ref">Moodle: Custom reports · Course/Activity completion reports · Logs · Feedback</span></h2>
+  <div class="g2"><div class="scr"><div class="bar"></div><div class="p c"><div class="r" style="gap:4px;flex-wrap:wrap"><span class="x b">Overview</span><span class="x">Course completion</span><span class="x">Activity completion</span><span class="x">Satisfaction</span><span class="x">Logs</span><span class="x">xAPI<span class="n">1</span></span></div>
+    <div class="r"><div class="x s f" style="height:46px">Users</div><div class="x s f">Active 7d</div><div class="x s f">Enrolments</div><div class="x s f">Completion %</div><div class="x s f">Overdue</div><div class="x s f">Satisfaction</div></div>
+    <div class="r"><div class="x s f" style="height:80px">Completion by course</div><div class="x s f">Completion by branch<span class="n">2</span></div></div><div class="x b" style="align-self:flex-end">Export CSV<span class="n">3</span></div></div></div>
+    <ol class="notes"><li>Six report tabs.</li><li>Filters by course, user and event.</li><li>Every report exports to CSV (xAPI to JSON).</li></ol></div></section>
+
+<section class="board"><h2>11 · Mobile, Arabic (RTL) and dark mode</h2>
+  <div class="r" style="flex-wrap:wrap;justify-content:center;gap:20px">
+    <div class="scr m"><div class="bar">☰ <span class="f"></span> ع ☾</div><div class="p c"><div class="x d" style="height:60px">Resume</div><div class="r"><div class="x s f">Hours</div><div class="x s f">Badges</div></div><div class="x s" style="height:60px">Assigned courses</div></div></div>
+    <div class="scr m" dir="rtl"><div class="bar">☰ <span class="f"></span> EN ☾</div><div class="p c"><div class="x d" style="height:60px">متابعة</div><div class="x s" style="height:40px">مقرراتي المعيّنة</div><div class="x s" style="height:40px">الخط الزمني</div></div></div>
+    <div class="scr m" style="background:#1E2138;border-color:#33375A"><div class="bar" style="background:#262A45;border-color:#33375A;color:#E8E6F0">☰ <span class="f"></span> ☀</div><div class="p c"><div class="x" style="background:#2E3254;border-color:#4A4F7A;color:#E8E6F0;height:60px">Dark mode</div><div class="x" style="background:#2E3254;border-color:#4A4F7A;color:#E8E6F0;height:40px">Same layout</div></div></div>
+  </div><p class="muted" style="text-align:center;margin-bottom:0">Single column on phones, collapsible menu, 44 px touch targets. The Arabic interface mirrors the layout right-to-left.</p></section>
+<p class="muted" style="font-size:.85rem;margin-top:24px">Prepared by Muhammed Zaghloul</p>
+</div>
+</body>
+</html>

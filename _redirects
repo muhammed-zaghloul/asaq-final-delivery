@@ -1,0 +1,3 @@
+# Keep owner-only files off the public site. "!" forces the rule even though the files exist (Netlify).
+/scripts/*        /404.html  404!
+/UPDATE-GUIDE.md  /404.html  404!
