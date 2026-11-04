@@ -75,7 +75,7 @@
     var notice = el('div', 'notice', esc(META.notice)); notice.setAttribute('role', 'note'); notice.setAttribute('aria-label', 'Submission notice');
     var head = el('header', 'site-head');
     var nav = '<nav class="topnav" aria-label="Tasks">' + TASKS.map(function (t) {
-      return '<a href="' + taskHref(t.n) + '"' + (current === t.n ? ' aria-current="page"' : '') + ' aria-label="Task ' + t.n + ': ' + esc(t.title) + '">' + t.n + '</a>';
+      return '<a href="' + taskHref(t.n) + '"' + (current === t.n ? ' aria-current="page"' : '') + ' aria-label="Task ' + t.n + ': ' + esc(t.title) + '">' + t.n + '<span class="tl">' + ['Design', 'Module', 'Quiz', 'Game', 'LMS', 'Video'][t.n - 1] + '</span></a>';
     }).join('') + '</nav>';
     head.innerHTML = '<div class="wrap"><a class="brand" href="' + HOME + '"' + (current === 0 ? ' aria-current="page"' : '') + '>' + MONO + '<span>' + esc(META.owner) + '<small>' + esc(META.brandLine) + '</small></span></a>' + nav + '</div>';
     var foot = el('footer', 'site-foot');
@@ -222,47 +222,47 @@
       '<p class="eyebrow">Task ' + t.n + ' of ' + TASKS.length + '</p>' +
       '<h1 id="page-h">' + esc(t.title) + '</h1>' +
       (t.titleAr ? '<p class="sum"><span lang="ar" dir="rtl">' + esc(t.titleAr) + '</span> \u00B7 ' + esc(t.titleGloss) + '</p>' : '') +
-      '<p class="sum">' + fmt(t.summary) + '</p>' +
       '<div class="chips">' + statusChip(t) + typeChips(t.types) + (t.isSample ? '<span class="chip">' + ic('sample') + esc(META.sampleBadge) + '</span>' : '') + '</div>';
     if (t.isSample && t.sampleReason) head.appendChild(el('div', 'sample-note glass', ribbon() + '<p>' + fmt(t.sampleReason) + '</p>'));
     main.appendChild(head);
 
-    // Quick facts
-    var facts = el('dl', 'facts section');
-    facts.setAttribute('aria-label', 'Quick facts');
-    facts.innerHTML = (t.facts || []).map(function (f) { return '<div class="fact glass"><dt>' + esc(f.label) + '</dt><dd>' + fmt(f.value) + '</dd></div>'; }).join('');
-    main.appendChild(facts);
+    // Summary: task name, output type, one short sentence
+    var brief = el('section', 'brief glass pad');
+    brief.setAttribute('aria-label', 'Summary');
+    brief.innerHTML = '<p class="brief-line"><b>Task ' + t.n + ' · ' + esc(t.title) + '</b>' + (t.output ? '<span class="brief-out">' + esc(t.output) + '</span>' : '') + '</p><p class="brief-sum">' + fmt(t.summary) + '</p>';
+    main.appendChild(brief);
 
-    // Required vs Covered
-    var rq = section('required', 'Required vs Covered');
-    var rows = (t.requirements || []).map(function (r) {
-      return '<tr><td data-label="Requirement">' + fmt(r.req) + '</td><td data-label="What we delivered">' + fmt(r.delivered) +
-        (r.status !== 'covered' && r.why ? '<span class="why"><b>Why:</b> ' + fmt(r.why) + '</span>' : '') + '</td>' +
-        '<td data-label="Where to see it" class="where">' + fmt(r.where) + '</td><td data-label="Status">' + pill(r.status) + '</td></tr>';
-    }).join('');
-    rq.appendChild(el('div', 'glass reveal', '<table class="req"><caption class="sr-only">What the brief required for Task ' + t.n + ' and how it is covered</caption><thead><tr><th scope="col">Requirement</th><th scope="col">What we delivered</th><th scope="col">Where to see it</th><th scope="col">Status</th></tr></thead><tbody>' + rows + '</tbody></table>'));
-    main.appendChild(rq);
-
-    // What we did
-    var did = section('approach', 'What we did');
-    did.appendChild(el('div', 'glass pad reveal prose', '<ul class="did">' + (t.did || []).map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>'));
-    main.appendChild(did);
-
-    // Demonstration
+    // Output first: Demonstration, then Deliverables
     var demo = section('demo', 'Demonstration');
     var builder = DEMOS[(t.demo || {}).kind];
     if (builder) builder(demo, t);
     main.appendChild(demo);
+    main.appendChild(deliverables(t));
+
+    // Required vs Covered
+    var rq = section('required', 'Required vs Covered');
+    var rows = (t.requirements || []).map(function (r) {
+      return '<tr><td data-label="Requirement">' + fmt(r.req) + '</td><td data-label="Delivered">' + fmt(r.delivered) +
+        (r.status !== 'covered' && r.why ? '<span class="why"><b>Why:</b> ' + fmt(r.why) + '</span>' : '') + '</td>' +
+        '<td data-label="Where" class="where">' + fmt(r.where) + '</td><td data-label="Status">' + pill(r.status) + '</td></tr>';
+    }).join('');
+    rq.appendChild(el('div', 'glass reveal', '<table class="req"><caption class="sr-only">What the brief required for Task ' + t.n + ' and how it is covered</caption><thead><tr><th scope="col">Requirement</th><th scope="col">Delivered</th><th scope="col">Where</th><th scope="col">Status</th></tr></thead><tbody>' + rows + '</tbody></table>'));
+    main.appendChild(rq);
+
+    // What I did
+    var did = section('approach', 'What I did');
+    did.appendChild(el('div', 'glass pad reveal prose', '<ul class="did">' + (t.did || []).map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>'));
+    main.appendChild(did);
+
+    // Supporting detail (Task 1 key points, Task 5 feature labels)
+    if (t.highlights) main.appendChild(highlightsSection(t));
+    if (t.legend) main.appendChild(legendSection(t));
 
     // Task 6 script
-    if (t.script) main.appendChild(scriptSection(t));
-
-    // Deliverables
-    main.appendChild(deliverables(t));
 
     // Notes
     if (t.notes && t.notes.length) {
-      var nt = section('notes', 'Notes and assumptions');
+      var nt = section('notes', 'Notes');
       nt.appendChild(el('div', 'glass pad prose', '<ul>' + t.notes.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>'));
       main.appendChild(nt);
     }
@@ -286,17 +286,14 @@
     if (fsTarget) right.appendChild(fsButton(fsTarget));
     bar.appendChild(right);
     sec.appendChild(bar);
-    if (t.demo.hint) sec.appendChild(el('p', 'hint', ic('info') + '<span>' + fmt(t.demo.hint) + '</span>'));
+    if (t.demo && t.demo.hint) sec.appendChild(el('p', 'hint', ic('info') + '<span>' + fmt(t.demo.hint) + '</span>'));
     return right;
   }
 
   /* ---------- demonstration builders, one per kind ---------- */
   var DEMOS = {
-    // Task 1: key highlights + both PDFs inline
+    // Task 1: both PDFs inline
     pdfs: function (sec, t) {
-      sec.appendChild(el('div', 'highlights', (t.highlights || []).map(function (h) {
-        return '<div class="hl glass reveal"><h3>' + esc(h.title) + '</h3><ul>' + h.items.map(function (i) { return '<li>' + fmt(i) + '</li>'; }).join('') + '</ul></div>';
-      }).join('')));
       demoHead(sec, t, null);
       (t.files || []).forEach(function (k) {
         var f = FILES[k]; if (!f) return;
@@ -364,7 +361,6 @@
           '<p class="gloss">' + fmt(qq.gloss) + ' <span class="muted">(Content section ' + esc(qq.section) + ')</span></p>'));
       });
       sec.appendChild(g);
-      sec.appendChild(el('p', 'hint', ic('info') + '<span>Answer key and explanations: see the document below.</span>'));
       var live = el('div', 'section');
       live.innerHTML = '<h3>' + esc(t.demo.liveTitle) + '</h3>';
       var row = el('div', 'grid');
@@ -405,12 +401,6 @@
       demoHead(sec, t, app.wrap);
       sec.appendChild(app.wrap);
       sec.appendChild(el('div', 'accounts', (t.demo.accounts || []).map(function (a) { return '<div class="account glass"><b>' + esc(a.role) + '</b><code>' + esc(a.user) + '</code></div>'; }).join('') + '<div class="account glass"><b>Password</b><code>any</code></div>'));
-      var lg = el('div', 'section');
-      lg.innerHTML = '<h3>Feature labels used in the LMS and its documentation</h3>';
-      lg.appendChild(el('div', 'legend', (t.legend || []).map(function (c) {
-        return '<div class="col glass"><span class="pill ' + c.status + '">' + esc(c.label) + '</span><p class="small" style="margin:10px 0 0">' + esc(c.text) + '</p><ul>' + c.items.map(function (i) { return '<li>' + fmt(i) + '</li>'; }).join('') + '</ul></div>';
-      }).join('')));
-      sec.appendChild(lg);
       var wf = el('div', 'section');
       var d = details(t.demo.wireTitle, false, function (body) {
         var w = appFrame(link(t.demo.wireSrc), t.demo.wireTitle, 'wire');
@@ -439,6 +429,22 @@
       sec.appendChild(el('p', 'hint', ic('info') + '<span>' + fmt(t.demo.captionsNote) + '</span>'));
     }
   };
+
+  /* ---------- supporting sections (after "What I did") ---------- */
+  function highlightsSection(t) {
+    var s = section('highlights', 'Key points');
+    s.appendChild(el('div', 'highlights', (t.highlights || []).map(function (h) {
+      return '<div class="hl glass reveal"><h3>' + esc(h.title) + '</h3><ul>' + h.items.map(function (i) { return '<li>' + fmt(i) + '</li>'; }).join('') + '</ul></div>';
+    }).join('')));
+    return s;
+  }
+  function legendSection(t) {
+    var s = section('legend', 'Feature labels');
+    s.appendChild(el('div', 'legend', (t.legend || []).map(function (c) {
+      return '<div class="col glass"><span class="pill ' + c.status + '">' + esc(c.label) + '</span><p class="small" style="margin:10px 0 0">' + esc(c.text) + '</p><ul>' + c.items.map(function (i) { return '<li>' + fmt(i) + '</li>'; }).join('') + '</ul></div>';
+    }).join('')));
+    return s;
+  }
 
   /* ---------- Task 6 script tables ---------- */
   function scriptSection(t) {
@@ -470,7 +476,7 @@
     var s = section('files', 'Deliverables');
     var keys = t.files || [];
     if (!keys.length) {
-      s.appendChild(el('div', 'glass pad', '<p style="margin:0">' + fmt(t.filesNote || 'This task\u2019s deliverable is the live module in the [demonstration](#demo) above: an HTML5 web module packaged as SCORM 1.2. Its videos are listed under [Task 6](task-6/#files) and its design under [Task 1](task-1/#files).') + '</p>'));
+      s.appendChild(el('div', 'glass pad', '<p style="margin:0">' + fmt(t.filesNote || 'The deliverable is the live module above: an HTML5 module packaged as SCORM 1.2. Its videos are under [Task 6](task-6/#files), its design under [Task 1](task-1/#files).') + '</p>'));
       return s;
     }
     var ul = el('ul', 'files');

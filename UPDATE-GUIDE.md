@@ -62,12 +62,12 @@ Open `content/site-data.js`. Each task has its own block, marked like this:
 Inside each block:
 
 - `title`, `summary`, `cardSummary`: page title, one-line summary, home-page card text.
-- `facts`: the four small boxes under the title.
+- `output`: the output type shown in the summary block under the title.
 - `requirements`: the rows of the "Required vs Covered" table. Each row has `req`, `delivered`, `where`, `status` and, for anything not fully covered, `why`.
-- `did`: the "What we did" bullets.
+- `did`: the "What I did" bullets.
 - `demo`: the hint above the live demo and its settings.
 - `files`: which Drive files the task lists (keys from `files.js`).
-- `notes`: the "Notes and assumptions" bullets.
+- `notes`: the "Notes" bullets.
 
 Small formatting you can use in any text: `**bold**`, and links written as `[label](task-2/#demo)` (no leading `/`, so links also work when the site is opened as local files). Arabic text is detected automatically and shown right-to-left.
 

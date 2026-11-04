@@ -26,8 +26,8 @@ window.SITE = {
     notice: 'Assessment submission · Not for commercial use · © 2026 Muhammed Zaghloul. All rights reserved.',
     footer: [
       '© 2026 Muhammed Zaghloul. All rights reserved.',
-      'This website and its contents were prepared solely as an assignment submission for the ASAQ L&D Specialist assessment. Not for commercial use, redistribution or reuse without written permission.',
-      'ASAQ and its product names are referenced only as the context of the assessment. No affiliation or endorsement is implied. No ASAQ logo or brand assets are used.'
+      'Prepared solely as an assignment submission for the ASAQ L&D Specialist assessment. Not for commercial use, redistribution or reuse without written permission.',
+      'ASAQ and its product names are referenced only as assessment context. No affiliation or endorsement is implied. No ASAQ logo or brand assets are used.'
     ],
     sampleBadge: 'Sample · for demonstration purposes only',
     brandLine: 'ASAQ final delivery'
@@ -37,32 +37,32 @@ window.SITE = {
   landing: {
     eyebrow: 'Final practical assessment · L&D Specialist · Abdul Samad Al Qurashi (ASAQ)',
     title: 'From Notes to the Right Recommendation',
-    sub: 'A fragrance product-knowledge and consultative-selling programme for sales associates, delivered as six connected tasks.',
+    sub: 'A fragrance product-knowledge and consultative-selling programme for sales associates, in six connected tasks.',
     author: 'Prepared by Muhammed Zaghloul',
-    purposeTitle: 'Purpose of this website',
+    purposeTitle: 'Purpose',
     purpose: [
-      'It is the single place to review all six deliverables. Each one is shown live or in a viewer, beside the requirement it answers.',
-      'Every task page lists what the brief required, what was delivered, and the reason for anything delivered as a sample.',
-      'All six tasks are built on one module, «برنامج تهيئة مستشار المبيعات» (sales-associate onboarding programme), and one story: Ibrahim, a new associate at a fictional remote branch, with the learner acting as his mentor.'
+      'One place to review all six deliverables, live or in a viewer.',
+      'Each task page shows what the brief required and what was delivered.',
+      'All tasks share one story: Ibrahim, a new associate at a fictional remote branch, with the learner as his mentor.'
     ],
     videoCaption: 'A short overview of the submission.',
     reviewTitle: 'How to review',
-    review: ['Open a task card', 'Read “Required vs Covered”', 'Try the live demo', 'Open the files'],
-    reviewNote: 'About 45–60 minutes for a full review. Each task stands alone.',
+    review: ['Open a task', 'Try the demo and open the files', 'Check “Required vs Covered”', 'Read what I did'],
+    reviewNote: 'About 45–60 minutes. Each task stands alone.',
     tasksTitle: 'The six tasks',
     connectTitle: 'How the tasks connect',
-    connectText: 'Task 1 designs the programme. Task 2 builds its first lessons as a working module, which plays the Task 6 video and asks quiz questions 1–5 from Task 3. Task 5 is the platform that would host it. The Task 4 game runs on the same website as the LMS, so each game turn is recorded as an xAPI statement in the LMS reports.',
-    assumptionsTitle: 'Assumptions and notes'
+    connectText: 'Task 1 designs the programme. Task 2 builds its first lessons, with the Task 6 videos and Task 3 questions 1–5. Task 5 is the LMS that would host it; each Task 4 game turn is recorded there as an xAPI statement.',
+    assumptionsTitle: 'Assumptions'
   },
 
   // ===== GLOBAL ASSUMPTIONS (landing page, collapsible) =====
   assumptions: [
-    'Ibrahim, the Sharurah branch («فرع افتراضي», a fictional branch) and all customers are fictional, for training purposes.',
-    'Product names and notes are taken from ASAQ’s online store (November 2026) and must be checked against internal training before rollout.',
+    'Ibrahim, the Sharurah branch and all customers are fictional.',
+    'Product names and notes come from ASAQ’s online store (November 2026); check them against internal training before rollout.',
     'Game prices, footfall and targets are illustrative.',
     'LMS names, scores and dates are dummy data.',
-    'Associates already know store procedures and the POS. Testers and blotters are available in store.',
-    'The deliverables are in Arabic. This review website is in English for the assessors’ convenience.'
+    'Associates already know store procedures and the POS.',
+    'Deliverables are in Arabic; this review website is in English.'
   ],
 
   // ===== TASKS =====
@@ -72,44 +72,36 @@ window.SITE = {
     {
       n: 1,
       title: 'Instructional design',
-      cardSummary: 'Needs analysis, three measurable objectives, the full course design and storyboards, and the complete learning content.',
-      summary: 'The design of the whole programme: who it is for, what associates must be able to do, how each lesson works, and the learning content itself.',
+      cardSummary: 'Needs analysis, 3 objectives, course design, storyboards and the full content.',
+      summary: 'The design of the whole programme: audience, objectives, lesson design and content.',
+      output: '2 PDF documents · 216 pages',
       types: ['pdf'],
       isSample: false,
       sampleReason: '',
-      facts: [
-        { label: 'Format', value: '2 PDF documents (216 pp)' },
-        { label: 'Language', value: 'Arabic; content also in English' },
-        { label: 'Scope', value: '3 units · about 100 min designed' },
-        { label: 'Linked tasks', value: 'Tasks 2, 3 and 6' }
-      ],
       requirements: [
-        { req: 'A 20–30 min microlearning module on fragrance product knowledge and consultative selling',
-          delivered: 'The whole programme is designed: a welcome lesson and 3 units of short lessons, about 100 minutes in total, covering the full content document. The lessons marked for development (welcome, Lessons 1.1 and 1.2, quiz Q1–5; about 20 minutes) are built as the working module in Task 2.',
-          where: 'Part 2 PDF §2.3 course map (pp. 16–18); [Task 2 demo](task-2/#demo)', status: 'covered' },
+        { req: 'A 20–30 min fragrance microlearning module',
+          delivered: 'Whole programme designed (~100 min); ~20 min built in Task 2.',
+          where: 'Part 2 PDF, pp. 16–18', status: 'covered' },
         { req: 'Learner and performance-needs analysis',
-          delivered: 'Target audience and audience analysis (what we know → impact on the design); performance-needs analysis: current vs required behaviour, task by task, then causes and solution.',
-          where: 'Part 1 PDF sections 2–3 (pp. 4–6); Part 2 PDF §1.2–1.5 (pp. 5–9)', status: 'covered' },
+          delivered: 'Audience analysis; current vs required behaviour; causes.',
+          where: 'Part 2 PDF, pp. 5–9', status: 'covered' },
         { req: '3 measurable learning objectives',
-          delivered: 'LO1–LO3, aligned to Bloom’s levels (Remember → Understand → Apply), each with a measurable criterion.',
-          where: 'Part 2 PDF §1.6 (p. 10); Part 1 PDF section 1 (p. 3)', status: 'covered' },
+          delivered: 'LO1–LO3, Bloom-aligned, each with a criterion.',
+          where: 'Part 2 PDF, p. 10', status: 'covered' },
         { req: 'Storyboard or ID document',
-          delivered: 'ID document with storyboards for the intro video, the explainer video, Lesson 1.1, the drag & drop, the customer interaction and quiz Q1–5, plus the completion rules and the data recorded for every event.',
-          where: 'Part 2 PDF, Part 3 (pp. 20–87)', status: 'covered' },
-        { req: 'Actual content with at least 1 realistic customer scenario',
-          delivered: 'The full content document in Arabic and English: perfume basics, Arabian perfumery and consultative selling. Scenarios: «قوي مرة!» ("too strong!") and the wedding-guest worked example, which becomes the branching scenario.',
-          where: 'Part 1 PDF (worked example §3.8: pp. 60–62 Arabic, 110–112 English); Part 2 PDF §3.6 (pp. 62–70)', status: 'covered' },
-        { req: 'How the activities support the objectives',
-          delivered: 'An LO → content → activity → assessment alignment table, and a table that explains why each activity supports its objective.',
-          where: 'Part 2 PDF §2.4 (p. 19) and §4.5 (p. 99)', status: 'covered' }
+          delivered: 'Storyboards for videos, lessons, activities and quiz.',
+          where: 'Part 2 PDF, pp. 20–87', status: 'covered' },
+        { req: 'Actual content with a realistic customer scenario',
+          delivered: 'Full content in Arabic and English; «قوي مرة!» scenario.',
+          where: 'Part 1 PDF; Part 2 PDF, pp. 62–70', status: 'covered' },
+        { req: 'How activities support the objectives',
+          delivered: 'Alignment table: objective, content, activity, assessment.',
+          where: 'Part 2 PDF, pp. 19, 99', status: 'covered' }
       ],
       did: [
-        'One story and one tracked product carry the whole programme, so every task reinforces the same knowledge. Ibrahim (إبراهيم) is a new associate at a fictional branch in Sharurah (شرورة), on the edge of the Empty Quarter, far from any trainer. The learner is his mentor. No people appear in any visual.',
-        'Interactions follow Michael Allen’s **CCAF** model (Context, Challenge, Activity, Feedback) and aim for the third level of interactivity: branching decisions, drag & drop and feedback that depends on the learner’s choice, because the goal is behaviour in front of a customer, not memorised facts.',
-        'The content is written in Arabic for associates in Saudi showrooms, with English product terms. Part 1 also carries the full content in English.',
-        'Bloom’s levels stay consistent from the objectives through the activities to the assessment: Part 1 of the content builds knowledge, Parts 1–2 deepen understanding, and Part 3 applies it with customers.',
-        'Evaluation follows Kirkpatrick’s four levels: a 3-question reaction survey; quiz and interaction scores; a supervisor observation checklist at 2 and 6 weeks; and UPT, ATV, add-on rate and time-to-competence, 8 weeks before vs after.',
-        'The tracked product is «دهن عود ميان» (Dehn Oud Miyan, 80 ml spray). Its notes are as listed on ASAQ’s online store (November 2026): top oud wood, Brazilian rosewood and cardamom; heart sandalwood, vanilla and vetiver; base amber and tonka. They must be checked against internal training before launch.'
+        'One story carries everything: Ibrahim, a new associate at a fictional branch in Sharurah (شرورة), with the learner as his mentor.',
+        'Interactions follow Allen’s **CCAF** model, with branching decisions and feedback that depends on the choice.',
+        'Evaluation follows Kirkpatrick’s four levels, from a reaction survey to branch KPIs 8 weeks before vs after.'
       ],
       highlights: [
         { title: 'Objectives', items: [
@@ -132,12 +124,11 @@ window.SITE = {
           '**LO2:** explainer video, “solve the complaint”, layering → Q3, Q4, Q7, Q8.',
           '**LO3:** customer interaction, discovery questions, branching wedding scenario → Q5, Q9, Q10 and supervisor observation.' ] }
       ],
-      demo: { kind: 'pdfs', hint: 'Both documents open below. Scroll inside a viewer to turn the pages; use the viewer’s own zoom for detail.' },
+      demo: { kind: 'pdfs', hint: 'Both documents open below. Scroll inside a viewer to turn pages.' },
       files: ['t1_content', 't1_design'],
       inlineFirst: false,
       notes: [
-        'Ibrahim, the Sharurah branch and every customer are fictional, for training purposes.',
-        'Part 2 §3.9 plans the data sheet as a central spreadsheet keyed by employee number. The built module (Task 2) sends its events to a Google Sheet and, for this demonstration, asks for a name instead.'
+        'Part 2 §3.9 plans a central data sheet by employee number. The built module (Task 2) logs to a Google Sheet by name instead.'
       ]
     },
 
@@ -147,55 +138,47 @@ window.SITE = {
       title: 'Interactive prototype',
       titleAr: 'رحلة إبراهيم: الهرم العطري',
       titleGloss: 'Ibrahim’s Journey: The Fragrance Pyramid',
-      cardSummary: 'A working HTML5 module packaged as SCORM 1.2: hotspots, flip cards, drag & drop, a branching customer interaction and a graded quiz, all tracked.',
-      summary: 'The first lessons of the programme, built as a working module: «رحلة إبراهيم: الهرم العطري» (Ibrahim’s Journey: The Fragrance Pyramid).',
+      cardSummary: 'A working HTML5 module packaged as SCORM 1.2: hotspots, flip cards, drag & drop, a branching scenario and a graded quiz.',
+      summary: 'The first lessons of the programme, built as a working module.',
+      output: 'Live HTML5 module · SCORM 1.2 · ~20 min',
       types: ['live', 'video'],
       isSample: true,
-      sampleReason: 'This is the production sample of the designed course. It covers Lesson 0 (welcome) and Lessons 1.1–1.2, plus quiz questions 1–5. The remaining lessons are fully designed in the Task 1 document and would be built the same way.',
-      facts: [
-        { label: 'Format', value: 'HTML5 web module · SCORM 1.2' },
-        { label: 'Language', value: 'Arabic (right-to-left)' },
-        { label: 'Duration', value: 'About 20 minutes' },
-        { label: 'Linked tasks', value: 'Tasks 1, 3 and 6' }
-      ],
+      sampleReason: 'Production sample: Lesson 0, Lessons 1.1–1.2 and quiz Q1–5 (about 20 minutes). The rest is designed in Task 1.',
       requirements: [
         { req: 'A functional prototype',
-          delivered: 'A working module, embedded below, which also runs in any SCORM 1.2 LMS (manifest included, mastery score 80).',
-          where: '[Demonstration](#demo)', status: 'sample',
-          why: 'Production sample of the designed course: Lesson 0, Lessons 1.1–1.2 and quiz Q1–5. The remaining lessons are fully designed in Task 1 and would be built the same way.' },
+          delivered: 'Working module below; SCORM 1.2 package included.',
+          where: 'Demonstration', status: 'sample',
+          why: 'Covers Lessons 0, 1.1–1.2 and Q1–5; the rest is designed in Task 1.' },
         { req: 'At least 3 interaction types',
-          delivered: 'Hotspots on the bottle; two sets of flip cards (oil or spray, natural or synthetic); process steps (from essence to bottle); choose-the-reply message; drag & drop of notes to layers; drag & drop of layer timing; a branching customer interaction with 3 decisions and 3 endings; and a graded 5-question quiz (multiple choice, matching, true/false, ordering, scenario).',
-          where: 'Lessons 1.1 and 1.2 in the [demo](#demo)', status: 'covered' },
+          delivered: 'Hotspots, flip cards, drag & drop, branching scenario, quiz.',
+          where: 'Lessons 1.1–1.2', status: 'covered' },
         { req: 'Immediate feedback',
-          delivered: 'Per action and per decision, with explanations: the customer’s reaction first, then the reason. Wrong drops bounce back with a short hint.',
-          where: 'Every activity in the [demo](#demo)', status: 'covered' },
+          delivered: 'Reaction and reason after every action or decision.',
+          where: 'Every activity', status: 'covered' },
         { req: 'A completion and progress mechanism',
-          delivered: 'Progress bar, resume from the last screen, scores and a results screen. Completion needs the Lesson 1.1 screens, the explainer watched, the drag & drop done, 24 of 30 in the customer interaction and 4 of 5 (80%) in the quiz. SCORM status, score and suspend data; events sent to a Google Sheet.',
-          where: '[Demo](#demo) and the session tracking panel', status: 'covered' },
+          delivered: 'Progress bar, resume, scores, SCORM status; quiz pass at 4/5.',
+          where: 'Demo and tracking panel', status: 'covered' },
         { req: 'The tool used',
-          delivered: 'An HTML5 web module packaged as SCORM 1.2, with Google Sheets tracking.',
-          where: '[Demonstration](#demo)', status: 'covered' }
+          delivered: 'HTML5 web module, SCORM 1.2, Google Sheets tracking.',
+          where: 'Demonstration', status: 'covered' }
       ],
       did: [
-        'The learner acts as Ibrahim’s mentor in real showroom questions: each activity opens with a message from Ibrahim.',
-        'Each activity maps to an objective: the pyramid drag & drop to LO1, the timing activity and the customer interaction to LO2, and the interaction’s decisions to LO3.',
-        'The explainer video (Task 6) opens Lesson 1.2, and the intro video opens the module. Both have Arabic captions and a transcript inside the module.',
-        'Feedback shows the result before the judgement: the customer stays or heads for the door, then a short reason explains why.',
-        'Built mobile-first and right-to-left. The drag & drop also works by tap or keyboard, and motion respects the reduced-motion setting.',
-        'Every interaction is sent as one row to a Google Sheet (learner, session, screen, event, score, objective). If the connection drops, events wait on the device and are sent later.'
+        'The learner is Ibrahim’s mentor; each activity opens with a message from him.',
+        'Drag & drop maps to LO1, the timing activity and customer interaction to LO2, and its decisions to LO3.',
+        'Mobile-first and right-to-left. Every interaction is logged as a row in a Google Sheet.'
       ],
       demo: {
         kind: 'module',
-        hint: 'Use “Try as guest” («تجربة كضيف») on the sign-in screen. Lesson 1.2 contains the video, the drag & drop and the customer interaction.',
+        hint: 'Use “Try as guest” («تجربة كضيف») on the sign-in screen. Lesson 1.2 has the video, drag & drop and customer interaction.',
         src: 'apps/task2-module/index.html',
         title: 'Interactive module',
         trackingTitle: 'Session tracking',
-        trackingNote: 'Live from the module on this page. Events are also sent to a Google Sheet.'
+        trackingNote: 'Live from the module. Events also go to a Google Sheet.'
       },
       files: [],
       notes: [
-        'The module saves progress in this browser, so you can leave and resume.',
-        'Sessions on this website are recorded in the owner’s Google Sheet (the name you enter, screens, answers and scores). “Try as guest” records no name.'
+        'Progress is saved in this browser.',
+        'Sessions are logged to the owner’s Google Sheet (name, screens, scores). “Try as guest” records no name.'
       ]
     },
 
@@ -203,51 +186,44 @@ window.SITE = {
     {
       n: 3,
       title: 'Assessment (10 questions)',
-      cardSummary: 'A 10-question bank with mixed types, three scenario questions, an answer key, a pass mark with its rationale and a gap analysis.',
-      summary: 'Ten graded questions that cover the whole content, with an answer key, a pass mark and a way to read the results as learning gaps.',
+      cardSummary: '10 mixed questions with 3 scenarios, answer key, pass mark and gap analysis.',
+      summary: 'Ten graded questions with an answer key, a pass mark and a gap analysis.',
+      output: 'Question bank · 10 questions (Part 2 PDF)',
       types: ['pdf', 'live'],
       isSample: false,
       sampleReason: '',
-      facts: [
-        { label: 'Format', value: 'Question bank (Part 2 PDF)' },
-        { label: 'Questions', value: '10, including 3 scenarios' },
-        { label: 'Pass mark', value: '80% + 1 scenario correct' },
-        { label: 'Linked tasks', value: 'Tasks 1, 2, 4 and 5' }
-      ],
       requirements: [
         { req: '10 questions of mixed types',
-          delivered: 'Multiple choice (Q1, Q6, Q8), matching (Q2), true/false (Q3), ordering (Q4), multiple response (Q7), scenario-based (Q5, Q9, Q10).',
-          where: 'Question gallery below; Part 2 PDF §4.2–4.3 (pp. 91–97)', status: 'covered' },
-        { req: 'An answer key and an explanation for each',
-          delivered: 'Included for all 10: the correct option is marked and explained.',
-          where: 'Part 2 PDF §4.2–4.3 (pp. 91–97)', status: 'covered' },
+          delivered: 'Choice, matching, true/false, ordering, multiple response, scenarios.',
+          where: 'Gallery below; Part 2 PDF, pp. 91–97', status: 'covered' },
+        { req: 'An answer key and explanation for each',
+          delivered: 'All 10 marked and explained.',
+          where: 'Part 2 PDF, pp. 91–97', status: 'covered' },
         { req: 'At least 2 scenario-based questions',
-          delivered: '3 (Q5, Q9, Q10), each built on the customer’s own words.',
-          where: 'Question gallery below', status: 'covered' },
+          delivered: '3 scenarios: Q5, Q9, Q10.',
+          where: 'Gallery below', status: 'covered' },
         { req: 'A passing score with its rationale',
-          delivered: '80% (8 of 10), plus at least one of the scenario questions (5, 9, 10) correct. Rationale: it matches the pass level of the interactive customer scenario and suits a customer-facing role, allowing two mistakes without giving up the essentials.',
-          where: 'Part 2 PDF §4.4 (p. 98)', status: 'covered' },
-        { req: 'How the results identify learning gaps',
-          delivered: 'Each question is mapped to an objective and a lesson, so a wrong answer points to the lesson to revisit. For a learner, two wrong answers on the same objective reopen the linked lesson. For a showroom, any question missed by 30% or more is re-taught with a game round or a short video.',
-          where: 'Part 2 PDF §4.4 (p. 98)', status: 'covered' },
+          delivered: '80% plus one scenario correct; rationale given.',
+          where: 'Part 2 PDF, p. 98', status: 'covered' },
+        { req: 'How results identify learning gaps',
+          delivered: 'Each question maps to an objective and a lesson.',
+          where: 'Part 2 PDF, p. 98', status: 'covered' },
         { req: 'A fictional product line or stated assumptions',
-          delivered: 'Real product details labelled “as listed on the online store”, to be checked against internal training; the branch, the associate and the customers are fictional.',
-          where: 'Part 2 PDF §1.1 (p. 4) and §4.3', status: 'covered' }
+          delivered: 'Assumptions stated; branch and customers fictional.',
+          where: 'Part 2 PDF, p. 4', status: 'covered' }
       ],
       did: [
-        'The bank covers the whole content document. Q1–5 follow the explainer video and are built into the Task 2 module; Q6–10 cover the rest of the content.',
-        'Every question is tagged with its objective and the content section it tests, so the results read as gaps, not only as a score.',
-        'Scenario questions use real customer words («قوي مرة»، «أبي عطر»، «غالي») and ask for the best reply, not a definition.',
-        'Wrong options are the real mistakes associates make: switching product at once, asking about budget first, or defending the price.',
-        'Gap actions: LO1 (Q1, Q2, Q6) → Lessons 1.2–1.3 and the drag & drop again; LO2 (Q3, Q4, Q7, Q8) → the explainer and Lessons 1.4 and 2.3; LO3 (Q5, Q9, Q10) → the customer interaction, Unit 3 and supervisor follow-up in the showroom.'
+        'Q1–5 follow the explainer and run in the Task 2 module; Q6–10 cover the rest.',
+        'Each question is tagged with its objective and content section, so results read as gaps.',
+        'Scenarios use real customer words («قوي مرة»، «أبي عطر»، «غالي»); wrong options are real associate mistakes.'
       ],
       demo: {
         kind: 'gallery',
-        hint: 'A read-only view of the 10 questions. Answer key and explanations: see the document below.',
-        liveTitle: 'Try the questions live',
+        hint: 'Read-only view of the 10 questions. Answer key: see the document below.',
+        liveTitle: 'Try them live',
         live: [
-          { label: 'Q1–5 in the Task 2 module', href: 'task-2/#demo', text: 'The last part of Lesson 1.2, after the customer interaction.' },
-          { label: '5-question quiz in the Task 5 LMS', href: 'task-5/#demo', text: 'Course “Fragrance Fundamentals” › Final quiz (Q1, Q3, Q5, Q7, Q9; bilingual).' }
+          { label: 'Q1–5 in the Task 2 module', href: 'task-2/#demo', text: 'End of Lesson 1.2.' },
+          { label: '5-question quiz in the Task 5 LMS', href: 'task-5/#demo', text: 'Final quiz of “Fragrance Fundamentals” (Q1, 3, 5, 7, 9).' }
         ]
       },
       questions: [
@@ -293,12 +269,12 @@ window.SITE = {
           gloss: 'The customer likes Dehn Oud Miyan, then says: “Expensive.” What is the best reply?' }
       ],
       files: ['t1_design'],
-      fileNotes: { t1_design: 'The quiz is Part 4 of this document, pp. 88–100: test plan pp. 89–90, Q1–5 pp. 91–93, Q6–10 pp. 94–97, pass mark and gap analysis p. 98.' },
+      fileNotes: { t1_design: 'Quiz = Part 4, pp. 88–100: Q1–5 pp. 91–93, Q6–10 pp. 94–97, pass mark and gaps p. 98.' },
       inlineFirst: true,
       notes: [
-        'Questions 1–5 are interactive inside the Task 2 module. The full bank of 10, with the key, explanations and rationale, is in the Task 1 Part 2 document.',
-        'The Task 5 LMS also runs a 5-question version of the bank (Q1, Q3, Q5, Q7 and Q9; English and Arabic) as the final quiz of the course “Fragrance Fundamentals”, with a pass grade of 80% and 3 attempts.',
-        'The Task 4 facilitator guide reuses Q1, Q3, Q6, Q9 and Q10 as a pre/post check around the game.'
+        'Q1–5 are interactive in Task 2. The full bank with key and rationale is in the Task 1 Part 2 PDF.',
+        'The Task 5 LMS runs Q1, Q3, Q5, Q7 and Q9 as its final quiz (pass 80%, 3 attempts).',
+        'The Task 4 guide reuses Q1, Q3, Q6, Q9 and Q10 as a pre/post check.'
       ]
     },
 
@@ -308,53 +284,45 @@ window.SITE = {
       title: 'Learning game',
       titleAr: 'حصة السوق: تحدي المنطقة',
       titleGloss: 'Market Share: Region Challenge',
-      cardSummary: 'A team strategy game, «Market Share: Region Challenge»: every selling decision changes the basket, and the basket decides who owns each district.',
-      summary: 'A team strategy game for the showroom: «Market Share: Region Challenge» / «حصة السوق: تحدي المنطقة».',
+      cardSummary: 'A team strategy game, «Market Share: Region Challenge»: every selling decision changes the basket.',
+      summary: 'A team strategy game for the showroom.',
+      output: 'Live facilitator game + 2 PDFs',
       types: ['live', 'pdf'],
       isSample: true,
-      sampleReason: 'The printable kit is a 2-page sample with one example of each element (board extract, one card per type, a price-list extract, a score sheet, part of the rubric). The full kit is available on request.',
-      facts: [
-        { label: 'Format', value: 'Live facilitator game + 2 PDFs' },
-        { label: 'Players', value: '2–4 teams of 2–4' },
-        { label: 'Duration', value: '35–45 min + 10 min debrief' },
-        { label: 'Linked tasks', value: 'Tasks 1, 3 and 5' }
-      ],
+      sampleReason: 'The printable kit is a 2-page sample with one example of each element. The full kit is available on request.',
       requirements: [
         { req: 'Objective and learning outcomes',
-          delivered: 'Goal: practise the full consultative-selling cycle under time pressure and competition. Outcomes are mapped to LO1–LO3 by game step: recommend (LO1), handle the objection (LO2), discover, upsell and add-on (LO3).',
-          where: 'Facilitator guide §1 (p. 2)', status: 'covered' },
+          delivered: 'Practise the selling cycle; mapped to LO1–LO3.',
+          where: 'Guide §1, p. 2', status: 'covered' },
         { req: 'Rules, setup, materials, duration',
-          delivered: 'A 5-minute setup; the order of each round (event → district → power-ups → customer card → 5 decisions → sale → claim); digital and paper materials; 35–45 min for 6 rounds with 3 teams, then a 10-minute debrief. The game itself shows the rules.',
-          where: 'Facilitator guide §2–5 (pp. 2–4); the game’s rules screen', status: 'covered' },
+          delivered: '5-min setup; 6 rounds in 35–45 min, then a 10-min debrief.',
+          where: 'Guide §2–5, pp. 2–4', status: 'covered' },
         { req: 'A playable sample (board/cards)',
-          delivered: 'A full digital facilitator game (9 districts, 12 customer cards, 6 products, 6 add-ons, 4 objections, 6 events, 3 power-ups) plus a printable sample.',
-          where: '[Demonstration](#demo); printable kit', status: 'sample',
-          why: 'The digital game is complete. The printable kit is a 2-page sample with one example of each element; the full kit is available on request.' },
+          delivered: 'Full digital game; printable kit as sample.',
+          where: 'Demonstration', status: 'sample',
+          why: 'The digital game is complete; the printable kit is a 2-page sample.' },
         { req: 'Scoring and progression',
-          delivered: 'Sale = basket × footfall. Claim a free district, or beat a rival’s best sale to take it. 10% of every sale becomes budget. Final score = market share % plus KPI bonuses.',
-          where: 'Facilitator guide §6 (p. 5); the game’s results screen', status: 'covered' },
+          delivered: 'Sale = basket × footfall; market share plus KPI bonuses.',
+          where: 'Guide §6, p. 5', status: 'covered' },
         { req: 'A facilitator guide',
-          delivered: '6 pages, Arabic: objectives, setup, rules, scoring, facilitator tips, debrief, other formats, measurement and assumptions.',
-          where: 'Facilitator guide (Deliverables)', status: 'covered' },
-        { req: 'How to measure whether it improves learning',
-          delivered: 'Pre/post check (5 questions from the bank), in-game skill accuracy across sessions, xAPI records in the LMS, a supervisor checklist at 2 and 6 weeks, and branch KPIs (UPT, ATV, add-on rate) vs control branches.',
-          where: 'Facilitator guide §10 (p. 6)', status: 'covered' },
+          delivered: '6-page guide in Arabic.',
+          where: 'Deliverables', status: 'covered' },
+        { req: 'How to measure improved learning',
+          delivered: 'Pre/post check, in-game accuracy, xAPI, supervisor checklist, KPIs.',
+          where: 'Guide §10, p. 6', status: 'covered' },
         { req: 'A real learning mechanic, not only points',
-          delivered: 'Each selling decision changes the basket. A weak first question loses the customer (no sale), a wrong product earns only 40% of its price, a wrong upsell or a forced add-on lowers the basket, and a poor objection reply costs 30%.',
-          where: 'Facilitator guide §1 and §5; play one turn in the [demo](#demo)', status: 'covered' }
+          delivered: 'Each decision changes the basket; weak ones lose sales.',
+          where: 'Guide §1, §5; demo', status: 'covered' }
       ],
       did: [
-        'One room is one region: Jeddah, with 9 districts rated ★ to ★★★ and footfall of 8, 12 or 18 customers a day. The sales target is SAR 50,000 per team over 6 rounds.',
-        'Teams compete for the largest market share through consultative selling. Each turn has 5 decisions: discover → recommend → upsell → one add-on → handle the objection. Each decision changes the basket.',
-        'Sale = basket × footfall. The team claims a free district, or beats a rival’s best sale to take theirs.',
-        'Strategy: 10% of every sale becomes budget for power-ups (Training = retry, Tester = redraw, Promotion = +20%). A market event changes each round: wedding, Ramadan, Eid, competitor, price-sensitive, tourist.',
-        'KPI bonuses: +5 each for best add-on rate, best UPT and most districts. The winner has the highest market share % plus bonuses, so one lucky sale is not enough.',
-        'The results show accuracy per skill and the weakest skill, with the lesson to review. The facilitator’s debrief starts from there.'
+        'Teams compete for market share across 9 Jeddah districts over 6 rounds.',
+        'Each turn has 5 decisions: discover, recommend, upsell, add-on, handle the objection. Sale = basket × footfall.',
+        'Results show accuracy per skill and the weakest one, to start the debrief.'
       ],
       demo: {
         kind: 'game',
-        hint: 'Set up 2–4 teams and play a round; the facilitator projects this screen.',
-        extra: 'The same game feeds the Task 5 LMS. Both run on this website, so each turn played here is also written to the LMS as an xAPI statement (open the LMS once, then sign in as admin › Reports › xAPI statements).',
+        hint: 'Set up 2–4 teams and play a round.',
+        extra: 'Each turn played here is also written to the Task 5 LMS as an xAPI statement (open the LMS once, then Admin › Reports).',
         src: 'apps/task4-game/index.html',
         title: 'Market Share: Region Challenge (game)',
         langButton: 'Switch to Arabic',
@@ -363,9 +331,8 @@ window.SITE = {
       files: ['t4_guide', 't4_kit'],
       inlineFirst: true,
       notes: [
-        'Prices and footfall figures are illustrative for the game, not real store data.',
-        'District names come from Jeddah and are used only as a board; any city can replace them.',
-        'The full printable kit (9-district board, 12 customer cards, 4 objections, 6 events, 3 power-ups, full answer key) is available on request.'
+        'Prices and footfall are illustrative; district names are only a board.',
+        'The full printable kit is available on request.'
       ]
     },
 
@@ -373,43 +340,36 @@ window.SITE = {
     {
       n: 5,
       title: 'Training website (LMS prototype)',
-      cardSummary: 'The “Sales Academy” learning platform: learner, manager and admin roles, eight content types, completion tracking, reports and an Arabic interface.',
-      summary: 'The “Sales Academy” learning platform, inspired by Moodle Cloud: a working prototype with a wireframe and documentation.',
+      cardSummary: 'The “Sales Academy” learning platform: three roles, eight content types, tracking, reports and an Arabic interface.',
+      summary: 'The “Sales Academy” learning platform: a working prototype with wireframe and documentation.',
+      output: 'Live LMS prototype + wireframe + PDF',
       types: ['live', 'pdf'],
       isSample: true,
-      sampleReason: 'A working prototype with dummy data and placeholder media. Data is stored in the browser (a simulated back end). It implements only the basic features; extra features depend on business needs and the LMS budget.',
-      facts: [
-        { label: 'Format', value: 'Web prototype + wireframe + PDF' },
-        { label: 'Language', value: 'English default; Arabic (RTL)' },
-        { label: 'Roles', value: 'Learner, manager, admin' },
-        { label: 'Linked tasks', value: 'Tasks 2, 3 and 4' }
-      ],
+      sampleReason: 'Working prototype with dummy data and basic features only. Data is kept in the browser.',
       requirements: [
         { req: 'A learner journey or wireframe',
-          delivered: 'Wireframe: sitemap by role, annotated screens for every role, and mobile, Arabic (RTL) and dark-mode notes. Plus the live journey: sign in → dashboard → course → player → quiz → certificate → history.',
-          where: 'Wireframe (under the demo); [demo](#demo)', status: 'covered' },
+          delivered: 'Wireframe plus live learner journey.',
+          where: 'Under the demo', status: 'covered' },
         { req: 'Content structure and completion tracking',
-          delivered: 'Courses, sections and activities across 8 content types (video with captions, SCORM 1.2, HTML page, audio, image, xAPI scenario, quiz, survey); completion per activity and per course, which triggers a badge, a certificate and a notification.',
-          where: '[Demo](#demo): course “Fragrance Fundamentals”; documentation §3 (p. 3)', status: 'covered' },
-        { req: '1 small working code prototype',
-          delivered: 'The whole LMS (learner, manager and admin roles), English by default with an Arabic interface and RTL, in light and dark modes.',
-          where: '[Demonstration](#demo)', status: 'covered' },
-        { req: 'How quiz scores, completion and feedback are captured',
-          delivered: 'In the browser (localStorage) and in reports, with CSV/JSON export; a SCORM 1.2 runtime; an in-browser xAPI LRS. The Task 2 module also sends events to a Google Sheet.',
-          where: 'Admin › Reports in the [demo](#demo); documentation §7 (p. 10)', status: 'covered' },
+          delivered: '8 content types; completion drives badges and certificates.',
+          where: 'Demo; docs §3, p. 3', status: 'covered' },
+        { req: 'One small working code prototype',
+          delivered: 'Full LMS: three roles, Arabic RTL, dark mode.',
+          where: 'Demonstration', status: 'covered' },
+        { req: 'How scores, completion and feedback are captured',
+          delivered: 'Browser storage, reports with export, SCORM and xAPI.',
+          where: 'Admin › Reports; docs §7, p. 10', status: 'covered' },
         { req: 'Accessibility, mobile and privacy',
-          delivered: 'In the documentation: WCAG 2.2 AA target, mobile-first, privacy controls (download my data, request deletion); alignment with Saudi Arabia’s PDPL recommended before launch.',
-          where: 'Documentation §9 (p. 10)', status: 'covered' },
-        { req: 'Labels: Implemented / Simulated / Recommended',
-          delivered: 'Shown on every feature in the LMS (“Moodle references” page) and in the documentation.',
-          where: 'LMS › Moodle references; documentation §10 (pp. 11–12); legend below', status: 'covered' }
+          delivered: 'WCAG 2.2 AA target, mobile-first, privacy controls.',
+          where: 'Docs §9, p. 10', status: 'covered' },
+        { req: 'Implemented / Simulated / Recommended labels',
+          delivered: 'Shown on every feature in the LMS and docs.',
+          where: 'Legend below; docs §10', status: 'covered' }
       ],
       did: [
-        'Most LMSs share the same structure, so the prototype reuses Moodle Cloud’s features and terms instead of inventing new ones. Every feature is mapped to its Moodle reference.',
-        'Three roles: learners find and complete training; managers follow their team, assign courses with due dates and send reminders; administrators build courses, manage users and read reports.',
-        'The main course, “Fragrance Fundamentals”, uses this programme’s content: the pyramid infographic, a SCORM lesson, an xAPI customer scenario and a 5-question final quiz from the Task 3 bank.',
-        'A completion rule per type (watched 90%, viewed, SCORM passed, xAPI completed, quiz pass grade, survey submitted) drives badges, certificates and reports.',
-        'Data is saved in the browser for the demo, and “Reset demo” restores the dummy data. In production each store moves to the LMS’s own tables, gradebook and an external LRS.'
+        'Reuses Moodle Cloud’s features and terms; every feature maps to a Moodle reference.',
+        'Three roles: learners complete training, managers assign and follow, admins build and report.',
+        'The main course, “Fragrance Fundamentals”, uses this programme’s content and a 5-question quiz from Task 3.'
       ],
       legend: [
         { status: 'impl', label: 'Implemented', text: 'Works now in the prototype.', items: ['Dashboard, timeline, catalogue and self-enrolment', 'Activity and course completion', 'Video, audio, image, HTML page and SCORM 1.2 runtime', 'Quizzes, surveys, badges and certificates', 'Learning history, profile, privacy (data export and deletion request)', 'Manager team view; admin courses, users and reports', 'English and Arabic (RTL); light and dark modes'] },
@@ -418,7 +378,7 @@ window.SITE = {
       ],
       demo: {
         kind: 'lms',
-        hint: 'Sign in with a demo button on the login page, or type one of these usernames (any password).',
+        hint: 'Use a demo button on the login page, or one of these usernames (any password).',
         src: 'apps/task5-lms/index.html',
         title: 'Sales Academy LMS',
         accounts: [
@@ -432,10 +392,9 @@ window.SITE = {
       files: ['t5_docs'],
       inlineFirst: true,
       notes: [
-        'The platform and its documentation default to English (the brief allows the tool UI to stay in English). The interface switches to Arabic with RTL.',
-        'All users, scores, dates and reports are dummy data for demo purposes only.',
-        'Printing is disabled on this website, so the certificate’s print button shows the print notice instead.',
-        'The “Moodle references” links open the official Moodle documentation in a new tab.'
+        'Defaults to English (the brief allows it); switches to Arabic with RTL.',
+        'All users, scores and dates are dummy data.',
+        'Printing is disabled on this website.'
       ]
     },
 
@@ -445,42 +404,35 @@ window.SITE = {
       title: 'Video',
       titleAr: 'الهرم العطري',
       titleGloss: 'The Fragrance Pyramid',
-      cardSummary: 'An 87-second explainer, «الهرم العطري» (The Fragrance Pyramid), with a timed script, Arabic voice-over and 2D motion graphics, plus a 28-second intro.',
-      summary: 'A short explainer that teaches the fragrance pyramid with one real product, plus the intro that opens the module.',
+      cardSummary: 'An 87-second explainer, «الهرم العطري» (The Fragrance Pyramid), with a timed script and Arabic voice-over, plus a 28-second intro.',
+      summary: 'An 87-second explainer on the fragrance pyramid, plus the intro that opens the module.',
+      output: '2 MP4 videos · 87 s explainer + 28 s intro',
       types: ['video'],
       isSample: false,
       sampleReason: '',
-      facts: [
-        { label: 'Format', value: '2 MP4 videos · 1920 × 1080' },
-        { label: 'Duration', value: '87 s explainer + 28 s intro' },
-        { label: 'Language', value: 'Arabic voice-over' },
-        { label: 'Linked tasks', value: 'Tasks 1 and 2' }
-      ],
       requirements: [
         { req: 'A 60–90 s video',
-          delivered: 'Explainer «الهرم العطري» (The Fragrance Pyramid): 87 seconds, measured from the final file.',
-          where: '[Demonstration](#demo)', status: 'covered' },
+          delivered: '87-second explainer, measured from the final file.',
+          where: 'Demonstration', status: 'covered' },
         { req: 'A script',
-          delivered: 'The full script with timings, shown on this page and built from the final caption file. The storyboard is in the Task 1 Part 2 document.',
-          where: '[Script](#script); Part 2 PDF §3.4 (pp. 50–51)', status: 'covered' },
+          delivered: 'Full timed script and storyboard.',
+          where: 'Part 2 PDF, pp. 50–51', status: 'covered' },
         { req: 'A recorded voice-over',
-          delivered: 'A calm male voice in neutral, Saudi-leaning Arabic.',
-          where: '[Demonstration](#demo)', status: 'covered' },
+          delivered: 'Calm male voice, Saudi-leaning Arabic.',
+          where: 'Demonstration', status: 'covered' },
         { req: 'Visuals and captions',
-          delivered: '2D object-only motion graphics (no people) with on-screen key terms. Arabic captions are a separate WebVTT track in the module version (Task 2), with a transcript.',
-          where: '[Demonstration](#demo); [Task 2 module](task-2/#demo)', status: 'covered' }
+          delivered: '2D object-only motion graphics; Arabic captions in Task 2.',
+          where: 'Demo; Task 2', status: 'covered' }
       ],
       did: [
-        'The script follows a hook → problem → key terms → framework → worked example → result → close structure.',
-        'Every fact the quiz tests is said on screen: the three layers overlap; the timings (opening 5–15 min, heart 15 min to 4 h, base hours, up to the next day); cardamom → opening, sandalwood → heart, amber and tonka → base; and the behaviour “don’t judge from the first spray: smell it again in 15 minutes”.',
-        'Object-only visuals (a phone message, the bottle, a layered pyramid, a clock, a blotter) keep the focus on the product and need no actors.',
-        'The close hands over to practice: “Now help Ibrahim build the pyramid himself” opens the drag & drop in Task 2.',
-        'Bonus: the 28-second intro «رحلة إبراهيم» (Ibrahim’s Journey) opens the module: Sharurah, Ibrahim’s first week, no trainer nearby, and the learner as his mentor.'
+        'Structure: hook, problem, key terms, framework, worked example, result, close.',
+        'Every fact the quiz tests is said on screen, including “smell it again in 15 minutes”.',
+        'Object-only visuals, no actors. The close leads into the Task 2 drag & drop; the 28-second intro «رحلة إبراهيم» opens the module.'
       ],
       demo: {
         kind: 'videos',
-        hint: 'Press play on a video. Use the player’s own button for full screen.',
-        captionsNote: 'Arabic captions are included as a separate track in the module version (Task 2).',
+        hint: 'Press play. Use the player’s button for full screen.',
+        captionsNote: 'Arabic captions are in the module version (Task 2).',
         videos: [
           { key: 't6_explainer', poster: 'assets/img/posters/explainer-poster.jpg' },
           { key: 't6_intro', poster: 'assets/img/posters/intro-poster.jpg' }
@@ -520,14 +472,14 @@ window.SITE = {
         ] }
       ],
       scriptTitle: 'Script',
-      scriptLead: 'Time and voice-over are taken from the final caption files, so the script matches the final cut. The English gloss is a short, faithful translation. Segment codes follow the storyboard in the Task 1 Part 2 document.',
+      scriptLead: 'Time and voice-over come from the final caption files. The English gloss is a short translation.',
       scriptFileKey: 't6_script',
       scriptFileTitle: 'Read the script as a document',
-      files: ['t6_explainer', 't6_intro', 't6_script'],
+      files: ['t6_explainer', 't6_intro'],
       inlineFirst: false,
       notes: [
-        'Arabic captions are included as a separate track in the module version (Task 2). The Drive player on this page does not show external caption files.',
-        'In the final cut the customer says «ثقيل مرة!» ("way too heavy!"); the module’s customer interaction and quiz use the related complaint «قوي مرة!» ("too strong!").'
+        'Arabic captions are a separate track in the module (Task 2); the Drive player does not show them.',
+        'The final cut says «ثقيل مرة!»; the module uses the related complaint «قوي مرة!».'
       ]
     }
   ]

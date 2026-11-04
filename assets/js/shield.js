@@ -127,7 +127,7 @@
 
   /* ---------- 8. Developer-tools guard ---------- */
   // Browser zoom changes innerWidth but not outerWidth, so a plain "outer - inner"
-  // check fires at 125% zoom. Instead we ask: is there a zoom level at which the
+  // check fires at 125% zoom. Instead ask: is there a zoom level at which the
   // gap is just normal browser chrome? Docked tools leave a gap no zoom explains.
   var ZOOMS = [0.5, 0.67, 0.75, 0.8, 0.85, 0.9, 1, 1.1, 1.15, 1.2, 1.25, 1.33, 1.5, 1.7, 1.75, 2, 2.4, 2.5, 3];
   function toolsOpen() {
